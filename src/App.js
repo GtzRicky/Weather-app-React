@@ -15,7 +15,26 @@ function App() {
   const [windSpeed, setWindSpeed] = useState(0);
   const [pressure, setPressure] = useState(0);
   const [temp, setTemp] = useState(0);
-  const [backgound, setBackground] = useState("#389393")
+  const [background, setBackground] = useState("#003f5c")
+
+  
+  const [unit, setUnit] = useState("°");
+  const [converter, setConverter] = useState(true);
+
+  const handleConverter = () => {
+    setConverter(!converter);
+    if (converter) {
+      return (
+        setTemp(Math.round((((temp * 1.800) + 32) * 100)) / 100),
+        setUnit("°F")
+      )
+    } else {
+      return (
+        setTemp(Math.round((((temp - 32) / 1.800) * 100)) / 100),
+        setUnit("°C")
+      )
+    }
+  }
 
   useEffect( () => {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -35,26 +54,32 @@ function App() {
     });
   }, []);
 
-  const [unit, setUnit] = useState("°");
-  const [converter, setConverter] = useState(true);
-
-  const handleConverter = () => {
-    setConverter(!converter);
-    if (converter) {
-      return (
-        setTemp((temp * 1.800) + 32),
-        setUnit("°F")
-      )
-    } else {
-      return (
-        setTemp((temp - 32) / 1.800),
-        setUnit("°C")
-      )
+  useEffect( () => {
+    switch (description) {
+      case "few clouds":
+        setBackground("#b5b5b5")
+        break;
+      case "scattered clouds":
+        setBackground("#757575")
+        break;
+      case "broken clouds":
+        setBackground("#666666")
+        break;
+      case "shower rain":
+        setBackground("#78c48b")
+        break;
+      case "rain":
+        setBackground("#4470b3")
+        break;
+      case "thunderstorm":
+        setBackground("#000000")
+      default:
+        break;
     }
-  }
+  }, [description]);
 
   return (
-    <div className="App" style={{backgroundColor: "#389393"}}>
+    <div className="App" style={{backgroundColor: background}}>
       { render ? (
         <div className="Card">
           <div>
