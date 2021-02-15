@@ -1,4 +1,57 @@
 .App {
   text-align: center;
+  display: flex;
+  background-color: #389393;
+  width: 100%;
+  height: 100%;
+}
+
+.Card {
+  margin: auto;
+  background-color: #ebebeb;
+  padding: 40px 50px;
+  border-radius: 5px;
+}
+
+.WeatherInfo {
+  text-align: justify;
+  height: auto;
+  clear: both;
+  font-weight: 500;
+  display: flex;
+}
+
+.Temp {
+  text-align: center;
+}
+
+.TempUnits {
+  font-size: 20px;
+}
+
+button {
+  background-color: #f5a25d;
+  color: #fff;
+  display: inline-block;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+p {
+  color: #389393;
+}
+
+h1 {
+  color: #fa7f72;
+}
+
+h3 {
+  color: #fa7f72
+}
+
+html, body, #root, #root > div.App {
+  height: 100%;
 }
 

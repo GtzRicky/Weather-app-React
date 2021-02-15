@@ -12,8 +12,8 @@ const DisplayInfo = ({city, country, description, humidity, windspeed, pressure}
 
   return (
     <div>
-      <h2>{city}, {country}</h2>
         <div className="Conditions">
+          <h3>{city}, {country}</h3>
           <p>{description}</p>
           <p><FontAwesomeIcon icon={faTint}/> Humidity = {humidity} %</p>
           <p><FontAwesomeIcon icon={faWind}/> Wind speed = {windspeed} m/s</p>
@@ -105,11 +105,12 @@ function App() {
       <div className="Card">
         <div>
           <h1>Weather App</h1>
+          <hr />
         </div>
         <div className="WeatherInfo">
           <div className="Temp">
             <img src={`http://openweathermap.org/img/wn/${icon}@2x.png`} />
-            <p>{temp}{unit}</p>
+            <p className="TempUnits">{temp}{unit}</p>
             <button onClick={handleConverter}>C° / F°</button>
           </div>
           <DisplayInfo
