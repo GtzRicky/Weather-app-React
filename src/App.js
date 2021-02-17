@@ -15,7 +15,7 @@ function App() {
   const [windSpeed, setWindSpeed] = useState(0);
   const [pressure, setPressure] = useState(0);
   const [temp, setTemp] = useState(0);
-  const [background, setBackground] = useState("#003f5c")
+  const [background, setBackground] = useState("#0c91cf")
 
   
   const [unit, setUnit] = useState("°");
@@ -57,19 +57,19 @@ function App() {
   useEffect( () => {
     switch (description) {
       case "few clouds":
-        setBackground("#b5b5b5")
+        setBackground("#c2c0c0")
         break;
       case "scattered clouds":
         setBackground("#757575")
         break;
       case "broken clouds":
-        setBackground("#666666")
+        setBackground("#606060")
         break;
       case "shower rain":
         setBackground("#78c48b")
         break;
       case "rain":
-        setBackground("#4470b3")
+        setBackground("38609c")
         break;
       case "thunderstorm":
         setBackground("#000000")
