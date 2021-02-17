@@ -102,7 +102,7 @@ function App() {
             />
           </div>
         </div>
-      ) : (<WindMillLoading color="#ebebeb" size="large"/>)}
+      ) : (<WindMillLoading color="#f4f9f9" size="large"/>)}
     </div>
   );
 }
